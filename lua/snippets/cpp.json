@@ -1,0 +1,15 @@
+{
+    "C++ Main Function": {
+        "prefix": "cppmain",
+        "body": [
+            "#include<bits/stdc++.h>",
+            "using namespace std;",
+            "$1",
+            "int main() {",
+            "    cout << ;",
+            "    return 0;",
+            "}"
+        ],
+        "description": "C++ Main Function Template"
+    }
+}

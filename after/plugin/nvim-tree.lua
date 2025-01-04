@@ -91,3 +91,13 @@ au BufEnter NvimTree setlocal statusline=%!DisableST()
 ]], false)
 
 vim.cmd('hi NvimTreeStatusLineNC guibg=nvim_treebg guifg=nvim_treebg')
+
+-- Auto close NvimTree when no file is open
+vim.api.nvim_create_autocmd("BufEnter", {
+  callback = function()
+    local buf_count = #vim.fn.getbufinfo({buflisted = 1})
+    if buf_count == 1 and vim.bo.filetype == "NvimTree" then
+      vim.cmd("quit")
+    end
+  end
+})
